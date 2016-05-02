@@ -23,6 +23,8 @@ public class UserManager {
 		User objUser = null;
 		UserDAO objUserDAO = null;
 		
+		objUserDAO.get
+		
 		return objUser;
 	}
 
