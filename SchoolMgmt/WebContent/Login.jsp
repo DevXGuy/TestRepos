@@ -10,12 +10,17 @@
 <body>
 
 	<div>
-		<p>
-			<label>Username: </label><input type="text" id="txtUsername" />
-		</p>
-		<p>
-			<label>Password: </label><input type="password" id="txtPassword" />
-		</p>
+		<form action="/SchoolMgmt/LoginServlet" method="post">
+			<p>
+				<label>Username: </label><input type="text" id="txtUsername" />
+			</p>
+			<p>
+				<label>Password: </label><input type="password" id="txtPassword" />
+			</p>
+			<p>
+				<input type="submit" id="btnLogin" value="Login">
+			</p>
+		</form>
 	</div>
 
 </body>

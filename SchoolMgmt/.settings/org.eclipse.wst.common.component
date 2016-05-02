@@ -4,6 +4,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/UserMgmt"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/DBManager"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SessionMgmt"/>
         <property name="context-root" value="SchoolMgmt"/>
         <property name="java-output-path" value="/SchoolMgmt/build/classes"/>
     </wb-module>

@@ -14,8 +14,6 @@ public class DBManager {
 		
 		// open db connection
 		
-		
-		
 		return objConn;
 	}
 }

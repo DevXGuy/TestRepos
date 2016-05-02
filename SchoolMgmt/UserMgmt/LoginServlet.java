@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.Response;
+
+import com.sun.corba.se.spi.activation.Repository;
 
 /**
  * Servlet implementation class LoginServlet
@@ -54,12 +57,18 @@ public class LoginServlet extends HttpServlet {
 			objUser = objUserManager.findUser(strUsername, strPassword);
 			
 			objSession = request.getSession();
-			
+			if(objSession == null)
+			{
+				throw new Exception("Failed to create a session for user.");
+			}
 			objSession.setAttribute("User", objUser);
+			
+			response.sendRedirect("Profile.jsp");
 		}
 		catch(Exception ex)
 		{
 			ex.toString();
+			response.sendRedirect("Register.jsp");
 		}
 	}
 
