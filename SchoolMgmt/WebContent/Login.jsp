@@ -10,12 +10,12 @@
 <body>
 
 	<div>
-		<form action="/SchoolMgmt/UserMgmt/LoginServlet" method="post">
+		<form action="/SchoolMgmt/LoginServlet" method="post">
 			<p>
-				<label>Username: </label><input type="text" id="txtUsername" />
+				<label>Username: </label><input type="text" name="txtUsername" />
 			</p>
 			<p>
-				<label>Password: </label><input type="password" id="txtPassword" />
+				<label>Password: </label><input type="password" name="txtPassword" />
 			</p>
 			<p>
 				<input type="submit" id="btnLogin" value="Login">

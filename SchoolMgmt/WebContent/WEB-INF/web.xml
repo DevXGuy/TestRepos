@@ -15,7 +15,7 @@
 
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
-		<servlet-class>com.ShoolMgmt.UserMgmt.LoginServlet</servlet-class>
+		<servlet-class>LoginServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>

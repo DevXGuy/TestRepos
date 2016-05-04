@@ -5,9 +5,13 @@ public class UserManager {
 	{
 		UserDAO objUserDAO = null;
 
-		try {
+		try 
+		{
+			objUserDAO = new UserDAO();
 			objUserDAO.insert(objUser);	
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 	}
@@ -16,9 +20,13 @@ public class UserManager {
 	{
 		UserDAO objUserDAO = null;
 
-		try {
+		try 
+		{
+			objUserDAO = new UserDAO();
 			objUserDAO.delete(objUser);	
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 
@@ -29,9 +37,13 @@ public class UserManager {
 	{
 		UserDAO objUserDAO = null;
 
-		try {
+		try 
+		{
+			objUserDAO = new UserDAO();
 			objUserDAO.update(objUser);	
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 	}
@@ -42,9 +54,13 @@ public class UserManager {
 		User objUser = null;
 		UserDAO objUserDAO = null;
 
-		try {
+		try 
+		{
+			objUserDAO = new UserDAO();
 			objUser = objUserDAO.getUserByEmailAndPassword(strUsername, strPassword);	
-		} catch (Exception e) {
+		}
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 

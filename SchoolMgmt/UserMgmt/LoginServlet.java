@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.xml.ws.Response;
-
-import com.sun.corba.se.spi.activation.Repository;
 
 /**
  * Servlet implementation class LoginServlet
@@ -31,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-/*
+
 		String 		strUsername = null;
 		String 		strPassword = null;
 		UserManager objUserManager = null;
@@ -40,7 +37,6 @@ public class LoginServlet extends HttpServlet {
 
 		try
 		{
-
 			strUsername = request.getParameter("txtUsername");
 			strPassword = request.getParameter("txtPassword");
 
@@ -71,7 +67,6 @@ public class LoginServlet extends HttpServlet {
 			ex.toString();
 			response.sendRedirect("Register.jsp");
 		}
-		*/
 	}
 
 }
