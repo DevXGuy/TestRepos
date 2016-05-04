@@ -10,7 +10,7 @@
 <body>
 
 	<div>
-		<form action="/SchoolMgmt/LoginServlet" method="post">
+		<form action="/SchoolMgmt/UserMgmt/LoginServlet" method="post">
 			<p>
 				<label>Username: </label><input type="text" id="txtUsername" />
 			</p>

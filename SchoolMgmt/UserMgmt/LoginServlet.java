@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+/*
 		String 		strUsername = null;
 		String 		strPassword = null;
 		UserManager objUserManager = null;
@@ -54,6 +54,7 @@ public class LoginServlet extends HttpServlet {
 				throw new Exception("Password cannot be empty.");
 			}
 			
+			objUserManager = new UserManager();
 			objUser = objUserManager.findUser(strUsername, strPassword);
 			
 			objSession = request.getSession();
@@ -70,6 +71,7 @@ public class LoginServlet extends HttpServlet {
 			ex.toString();
 			response.sendRedirect("Register.jsp");
 		}
+		*/
 	}
 
 }

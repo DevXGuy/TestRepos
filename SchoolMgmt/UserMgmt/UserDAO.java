@@ -13,6 +13,7 @@ public class UserDAO {
 		
 		try 
 		{
+			objDBManager = new DBManager();
 			objConnection = objDBManager.getConn();
 			objSqlStmt = objConnection.prepareStatement("INSERT INTO tbl_User Name = ?, Username = ?, Password = ?");
 			objResultSet = objSqlStmt.executeQuery();
@@ -41,15 +42,17 @@ public class UserDAO {
 		
 	}
 	
-	public User getUserByEmailAndPassword(String strUsername, String strPassword)
+	public User getUserByEmailAndPassword(String strUsername, String strPassword) throws Exception
 	{
 		DBManager 			objDBManager 	= null;
 		Connection 			objConnection 	= null;
 		PreparedStatement 	objSqlStmt 		= null;
 		ResultSet			objResultSet 	= null;
+		User 				objUser = null;
 		
 		try 
 		{
+			objDBManager = new DBManager();
 			objConnection = objDBManager.getConn();
 			objSqlStmt = objConnection.prepareStatement("SELECT * FROM tbl_User WHERE Username = ?, Password = ?");
 			objSqlStmt.setString(1, strUsername);
