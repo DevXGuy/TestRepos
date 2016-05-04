@@ -54,6 +54,10 @@ public class UserDAO {
 		{
 			objDBManager = new DBManager();
 			objConnection = objDBManager.getConn();
+			if(objConnection == null)
+			{
+				throw new Exception("Failed to get database connection.");
+			}
 			objSqlStmt = objConnection.prepareStatement("SELECT * FROM tbl_User WHERE Username = ?, Password = ?");
 			objSqlStmt.setString(1, strUsername);
 			objSqlStmt.setString(1, strPassword);
