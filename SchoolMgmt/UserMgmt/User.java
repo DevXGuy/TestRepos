@@ -3,8 +3,8 @@ public class User {
 	
 	private int m_userID = 0;
 	private String m_strName;
-	private String m_strUsername;
-	private String m_strPasssword;
+	private String m_strEmail;
+	private String m_strPassword;
 	
 	public int getUserID() {
 		return m_userID;
@@ -18,16 +18,16 @@ public class User {
 	public void setName(String strName) {
 		this.m_strName = strName;
 	}
-	public String getUsername() {
-		return m_strUsername;
+	public String getEmail() {
+		return m_strEmail;
 	}
-	public void setUsername(String strUsername) {
-		this.m_strUsername = strUsername;
+	public void setEmail(String strEmail) {
+		this.m_strEmail = strEmail;
 	}
-	public String getPasssword() {
-		return m_strPasssword;
+	public String getPassword() {
+		return m_strPassword;
 	}
-	public void setPasssword(String strPasssword) {
-		this.m_strPasssword = strPasssword;
+	public void setPassword(String strPassword) {
+		this.m_strPassword = strPassword;
 	}
 }

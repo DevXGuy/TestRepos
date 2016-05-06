@@ -14,38 +14,39 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LogoutServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public LogoutServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/* (non-Javadoc)
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 		HttpSession objSession = null;
 
 		try
 		{
-			objSession = request.getSession(false);
+			objSession = req.getSession(false);
 			if(objSession == null)
 			{
 				throw new Exception("User is not logged in.");
 			}
 			objSession.invalidate();
-			
-			response.sendRedirect("Login.jsp");
+
+			resp.sendRedirect("Welcome.jsp");
 		}
 		catch(Exception ex)
 		{
-			ex.toString();
-			response.sendRedirect("Welcome.jsp");
+			ex.printStackTrace();
+			resp.sendRedirect("Welcome.jsp");
 		}
 	}
 

@@ -49,7 +49,7 @@ public class UserManager {
 	}
 
 
-	public User findUser(String strUsername, String strPassword)
+	public User findUser(String strUsername, String strPassword) throws Exception
 	{
 		User objUser = null;
 		UserDAO objUserDAO = null;
@@ -61,7 +61,7 @@ public class UserManager {
 		}
 		catch (Exception e) 
 		{
-			e.printStackTrace();
+			throw e;
 		}
 
 		return objUser;

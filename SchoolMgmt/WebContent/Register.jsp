@@ -8,6 +8,11 @@
 <title>Register</title>
 </head>
 <body>
-
+	<form action="/SchoolMgmt/RegisterServlet" method="post">
+		<label>Name: </label><input type="text" name="txtName"> <label>Email:</label><input
+			type="text" name="txtEmail"> <label>Password:</label><input
+			type="text" name="txtPassword"> <input type="submit"
+			name="btnSubmit" value="Register">
+	</form>
 </body>
 </html>

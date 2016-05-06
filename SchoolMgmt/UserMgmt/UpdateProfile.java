@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class UpdateProfile
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/UpdateProfile")
+public class UpdateProfile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public LoginServlet() {
+	public UpdateProfile() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -28,47 +28,57 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-		String 		strUsername = null;
-		String 		strPassword = null;
-		UserManager objUserManager = null;
-		User 		objUser = null;
+		String strName;
+		String strEmail;
+		String strPassword;
 		HttpSession objSession = null;
+		User		objUser = null;
+		UserDAO		objUserDAO = null;
 
-		try
+		try 
 		{
-			strUsername = request.getParameter("txtUsername");
+			strName = request.getParameter("txtName");
+			strEmail = request.getParameter("txtEmail");
 			strPassword = request.getParameter("txtPassword");
-
-			if(strUsername == null || strUsername.isEmpty())
+			if(strName.isEmpty())
 			{
-				throw new Exception("Username cannot be empty.");
+				throw new Exception("Name cannot be empty.");
 			}
-
-			if(strPassword == null || strPassword.isEmpty())
+			if(strEmail.isEmpty())
+			{
+				throw new Exception("Email cannot be empty.");
+			}
+			if(strPassword.isEmpty())
 			{
 				throw new Exception("Password cannot be empty.");
 			}
-			
-			objUserManager = new UserManager();
-			objUser = objUserManager.findUser(strUsername, strPassword);
-			
-			objSession = request.getSession(true);
+			objSession = request.getSession(false);
 			if(objSession == null)
 			{
-				throw new Exception("Failed to create a session for user.");
+				throw new Exception("Session was not found.");
 			}
+			objUser = (User) objSession.getAttribute("User");
+			if(objUser == null)
+			{
+				throw new Exception("Failed to get user from session.");
+			}
+			
+			objUser.setName(strName);
+			objUser.setEmail(strEmail);
+			objUser.setPassword(strPassword);
+			objUserDAO = new UserDAO();
+			objUserDAO.update(objUser);
 			objSession.setAttribute("User", objUser);
 			request.getSession().setAttribute("ProfileInfo", objUser);
-			
 			request.getRequestDispatcher("Profile.jsp").forward(request, response);
-//			response.sendRedirect("Profile.jsp");
-		}
-		catch(Exception ex)
+		} 
+		catch (Exception e) 
 		{
-			ex.printStackTrace();
-			response.sendRedirect("Register.jsp");
+			e.printStackTrace();
 		}
+
+
+
 	}
 
 }

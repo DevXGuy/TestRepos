@@ -53,7 +53,7 @@ public class SessionFilter implements Filter {
 				throw new Exception("Request or response doesn't exist.");
 			}
 			
-			session = req.getSession();
+			session = req.getSession(false);
 			if(session == null)
 			{
 				throw new Exception("Session doesn't exist.");
@@ -64,7 +64,7 @@ public class SessionFilter implements Filter {
 		} 
 		catch (Exception e) 
 		{
-			e.toString();
+			request.getRequestDispatcher("Welcome.jsp").forward(request, response);
 		}
 	}
 

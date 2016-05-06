@@ -18,7 +18,7 @@
 				<label>Password: </label><input type="password" name="txtPassword" />
 			</p>
 			<p>
-				<input type="submit" id="btnLogin" value="Login">
+				<input type="submit" name="btnLogin" value="Login">
 			</p>
 		</form>
 	</div>
